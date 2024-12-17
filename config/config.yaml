@@ -1,0 +1,9 @@
+artifacts_root : artifacts 
+
+data_ingestion :
+  root_dir : artifacts/data_ingestion 
+  source_URL: https://github.com/krishnaik06/datasets/raw/refs/heads/main/summarizer-data.zip # download the dataset zip here 
+  unzip_dir: artifacts/data_ingestion  # unzip here 
+  local_data_files: artifacts/data_ingestion/data.zip
+
+  
