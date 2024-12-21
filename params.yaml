@@ -1,1 +1,16 @@
-key: value
+TrainingArguments:
+    num_train_epochs: 5  # 5 epochs to start; can increase based on dataset size
+    per_device_train_batch_size: 4  # Larger batch size for L4 GPU
+    per_device_eval_batch_size: 4  # Match eval batch size to training
+    gradient_accumulation_steps: 4  # Effective batch size of 16
+    warmup_steps: 500 # Warmup for 5% of total steps
+    weight_decay: 0.01  # Regularization
+    logging_steps: 10  # Log every 10 steps
+    eval_strategy: 'steps'  # Evaluate during training
+    eval_steps: 250  # Evaluate more frequently with better GPU
+    save_steps: 500  # Save more frequently with better GPU
+    save_total_limit: 3  # Keep the last 3 checkpoints
+    learning_rate: 5e-5  # Slightly higher learning rate for faster convergence
+    load_best_model_at_end: True  # Use best checkpoint at end
+    fp16: True  # Mixed precision for speed and memory efficiency
+    dataloader_num_workers: 4  # Increase data loading parallelism

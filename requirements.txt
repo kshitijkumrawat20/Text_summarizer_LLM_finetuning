@@ -14,10 +14,11 @@ pydantic
 numpy 
 pandas
 matplotlib
-transformers
+transformers=4.45.2
 transformers[sentencepiece]
 datasets
 sacrebleu
 rouge_score
 py7zr
 pyYAML
+accelerate=1.0.1
